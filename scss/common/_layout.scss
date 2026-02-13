@@ -1,0 +1,399 @@
+.container {
+    height: 100vh;
+    padding: 65px 24px 75px 24px;
+    @include flexLayout(row, space-between, stretch);
+    &.column {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    //최근 본 메뉴
+    .recentMenu {
+        width: 185px;
+        @include flexLayout(column, flex-start, stretch);
+        > h6 {
+            font-size: 14px;
+            font-weight: 500;
+            height: 38px;
+            cursor: pointer;
+            @include flexLayout(row, flex-start, center);
+            gap: 7px;
+            &::after {
+                content: '';
+                width: 8px;
+                height: 2px;
+                background: url('/images/icon/icon_menu_minus.svg') no-repeat;
+            }
+            &.close {
+                &::after {
+                    width: 8px;
+                    height: 8px;
+                    background: url('/images/icon/icon_menu_plus.svg') no-repeat;
+                }
+            }
+        }
+        ul {
+            padding: 12px 15px;
+            @include flexLayout(column, flex-start, flex-start);
+            gap: 10px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            li {
+                height: 24px;
+                border-radius: 24px;
+                padding: 0 10px;
+                gap: 7px;
+                background-color: #f6f6f6;
+                @include flexLayout(row, flex-start, center);
+                a {
+                    max-width: 115px;
+                    @include ellipsis(1);
+                    font-weight: 500;
+                }
+                button {
+                    width: 12px;
+                    height: 12px;
+                    border: none;
+                    background: url('/images/icon/icon_menu_del.svg') no-repeat center center;
+                    text-indent: -9999px
+                }
+            }
+        }
+    }
+    //공통 레이아웃
+    .pageLayout {
+        @include flexLayout(column, flex-start, stretch);
+        width: calc(100% - 210px);
+        margin-top: 38px;
+        &.full {
+            width: 100%;
+            margin-top: 0;
+        }
+        .roundBoxWrap {
+            @include flexLayout(column, flex-start, stretch);
+            gap: 15px;
+        }
+        //공통 라운드 박스
+        .roundBox {
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 15px 20px 40px 20px;
+        }
+        //공통 입력필드
+        .inputField {
+            .rows {
+                width: 100%;
+                @include flexLayout(row, flex-start, flex-start);
+                flex-wrap: wrap;
+            }
+        }
+        //공통 입력 DL
+        dl {
+            &.element {
+                @include flexLayout(column, flex-start, stretch);
+                padding: 0 20px;
+                dt {
+                    line-height: 30px;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+                &.horiz {
+                    flex-direction: row;
+                    padding: 0;
+                    align-items: center;
+                    gap: 5px;
+                    dt {
+                        font-size: 14px;
+                        color: #505050;
+                    }
+                }
+                &.wd20 {
+                    width: 20%;
+                }
+                &.wd25 {
+                    width: 25%;
+                }
+                &.wd30 {
+                    width: 30%;
+                }
+                &.wd33 {
+                    width: 33%;
+                }
+                &.wd35 {
+                    width: 35%;
+                }
+                &.wd40 {
+                    width: 40%;
+                }
+                &.wd50 {
+                    width: 50%;
+                }
+                &.wd100 {
+                    width: 100%;
+                }
+            }
+        }
+        //상단 타이틀
+        .pageTitle {
+            @include flexLayout(row, space-between, center);
+            padding-top: 10px;
+            padding-bottom: 20px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+            h2 {
+                font-size: 26px;
+                letter-spacing: -1px
+            }
+            .root {
+                @include flexLayout(row, flex-start, center);
+                gap: 10px;
+                li {
+                    color: #767676;
+                    padding-right: 14px;
+                    background: url('/images/icon/icon_root_arrow.svg') no-repeat right center;
+                    &:last-child {
+                        background: none;
+                        font-weight: 500;
+                        color: #101010;
+                    }
+                }
+            }
+        }
+        //단축키
+        .shortcutKeys {
+            @include flexLayout(row, space-between, flex-start);
+            margin-bottom: 10px;
+            .setting {
+                @include flexLayout(row, flex-start, flex-start);
+                gap: 10px;
+            }
+            .fix {
+                @include flexLayout(row, flex-start, center);
+                gap: 10px;
+            }
+        }
+        //조회조건
+        .typeSearch {
+            padding: 15px 0 40px 0;
+            .top_ctrl {
+                padding: 0 20px;
+                @include flexLayout(row, space-between, center);
+                .tit {
+                    font-size: 18px;
+                    font-weight: 500;
+                }
+                .btns {
+                    @include flexLayout(row, flex-start, center);
+                    gap: 10px;
+                }
+            }
+            .inputField {
+                margin-top: 10px;
+            }
+            &.close {
+                padding: 15px 0;
+            }
+        }
+        //조회결과
+        .typeResult {
+            .top_ctrl {
+                margin-bottom: 10px;
+                @include flexLayout(row, space-between, center);
+                .tit {
+                    font-size: 18px;
+                    font-weight: 500;
+                    @include flexLayout(row, flex-start, flex-end);
+                    gap: 10px;
+                    span {
+                        font-size: 14px;
+                        i {
+                            color: #00b3e3
+                        }
+                    }
+                }
+                .btns {
+                    @include flexLayout(row, flex-start, center);
+                    gap: 10px;
+                }
+            }
+            .total_sum {
+                width: 100%;
+                min-height: 60px;
+                border: 1px solid #e0e0e0;
+                border-radius: 4px;
+                padding: 0 15px;
+                @include flexLayout(row, flex-start, center);
+                margin-bottom: 10px;
+                ul {
+                    @include flexLayout(row, flex-start, flex-start);
+                    flex-wrap: nowrap;
+                    gap: 12px;
+                    li {
+                        @include flexLayout(row, flex-start, center);
+                        gap: 17px;
+                        padding-right: 15px;
+                        position: relative;
+                        font-weight: 500;
+                        &::after {
+                            @include virtualLine(1px, 12px, #e0e0e0);
+                            @include positionLayout(absolute, y);
+                            right: 0;
+                        }
+                        &:last-child {
+                            padding-right: 0;
+                            &::after {
+                                display: none;
+                            }
+                        }
+                        .red {
+                            color: #ff2727;
+                        }
+                    }
+                }
+            }
+        }
+        //테이블에 입력창
+        .typeGirdInput {
+            padding-bottom: 25px;
+            @include flexLayout(column, flex-start, stretch);
+            gap: 15px;
+            .rows {
+                .top_ctrl {
+                    @include flexLayout(row, space-between, flex-end);
+                    .tit_area {
+                        @include flexLayout(row, flex-start, center);
+                        gap: 30px;
+                        h5 {
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+                    .btns {
+                        @include flexLayout(row, flex-start, center);
+                        gap: 10px;
+                    }
+                }
+                .grid {
+                    margin-top: 5px;
+                    border-top: 1px solid #101010;
+                    table {
+                        th {
+                            font-size: 14px;
+                            color: #505050;
+                            font-weight: 500;
+                            text-align: left;
+                            background-color: #f6f6f6;
+                            border-right: 1px solid #e0e0e0;
+                            border-bottom: 1px solid #e0e0e0;
+                            padding: 0 10px;
+                            &.point {
+                                &::after {
+                                    content: '*';
+                                    color: #ff2727;
+                                }
+                            }
+                        }
+                        td {
+                            padding: 10px;
+                            border-right: 1px solid #e0e0e0;
+                            border-bottom: 1px solid #e0e0e0;
+                            .text {
+                                display: flex;
+                                min-height: 36px;
+                                align-items: center;
+                                line-height: 1.2;
+                                font-weight: 500;
+                                color: #505050;
+                                .red {
+                                    color: #ff2727;
+                                }
+                            }
+                            &:last-child {
+                                border-right: 0
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //기간입력
+        .dateEnter {
+            @include flexLayout(row, flex-start, center);
+            .term {
+                @include flexLayout(row, flex-start, center);
+                gap: 2px;
+            }
+            .btns {
+                @include flexLayout(row, flex-start, center);
+                gap: 4px;
+                padding-left: 10px;
+                button {
+                    &.comm {
+                        min-width: 60px;
+                        &.on {
+                            background-color: #00b3e3;
+                            border-color: #00b3e3;
+                            color: #fff;
+                            &:hover {
+                                color: #fff;
+                            }
+                        }
+                        &:hover {
+                            border-color: #00b3e3;
+                            color: #00b3e3;
+                        }
+                    }
+                }
+            }
+        }
+        //검색어
+        .keyword {
+            @include flexLayout(row, flex-start, center);
+            gap: 10px;
+            .select {
+                width: 160px;
+            }
+        }
+        //검색어+버튼, 셀렉트+버튼
+        .input-n-button,
+        .select-n-button {
+            @include flexLayout(row, justify, center);
+            gap: 10px;
+            .comm {
+                min-width: 60px;
+            }
+        }
+        //주소검색
+        .address {
+            @include flexLayout(row, justify, center);
+            gap: 10px;
+            .post_num {
+                width: 250px;
+            }
+            .get_num {
+                width: 300px;
+            }
+            .detail {
+                width: calc(100% - 550px);
+            }
+        }
+        //한개의 행에 여러개의 항목
+        .disply-flex-gap10 {
+            @include flexLayout(row, flex-start, center);
+            gap: 10px;
+        }
+        //단위가 있는 입력 요소
+        .unit_field {
+            position: relative;
+            &::after {
+                content: attr(data-title);
+                width: 50px;
+                height: 34px;
+                @include flexLayout(row, center, center);
+                @include positionLayout(absolute, y);
+                right: 0;
+                color: #505050;
+                font-weight: 500;
+            }
+        }
+    }
+}

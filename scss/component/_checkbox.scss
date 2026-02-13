@@ -1,0 +1,33 @@
+.checkbox_group {
+    @include flexLayout(row, flex-start, center);
+    gap: 30px;
+}
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    input[type='checkbox'] {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        &:checked {
+            + span {
+                &::before {
+                    border-color: #00b3e3;
+                    background: #00b3e3 url('/images/icon/icon_checkbox.svg') no-repeat center center;
+                }
+            }
+        }
+    }
+    span {
+        @include flexLayout(row, flex-start, center);
+        gap: 5px;
+        &::before {
+            content: '';
+            width: 14px;
+            height: 14px;
+            border: 2px solid #e0e0e0;
+            border-radius: 2px;
+        }
+    }
+}

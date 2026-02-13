@@ -1,0 +1,16 @@
+.textarea {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px;
+    transition: all .4s;
+    min-height: 75px;
+    resize: vertical;
+    &::placeholder {
+        color: #c9c9c9;
+    }
+    &:focus {
+        border-color: $pramary-theme-color;
+        color: #101010;
+    }
+}

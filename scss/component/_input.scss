@@ -1,0 +1,28 @@
+input {
+    &.input {
+        width: 100%;
+        height: 36px;
+        border-radius: 4px;
+        border: 1px solid #e0e0e0;
+        padding: 0 12px;
+        transition: all .4s;
+        &[readonly='readonly'],
+        &:disabled {
+            background-color: #f6f6f6;
+        }
+        &:focus {
+            border-color: $pramary-theme-color;
+            color: #101010;
+        }
+        &::placeholder {
+            color: #c9c9c9;
+        }
+        &.date {
+            padding: 0 40px 0 12px;
+            background: url('/images/icon/icon_calendar.svg') no-repeat calc(100% - 14px) center;
+        }
+        &.has_unit {
+            padding: 0 50px 0 12px;
+        }
+    }
+}

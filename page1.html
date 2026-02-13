@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>경동물류 차량관리시스템</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/scripts/module/jquery-1.10.2.min.js"></script>
+    <script src="/scripts/front.js"></script>
+</head>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="h-cntn">
+                <!--[Logo][Menu]-->
+                <div class="menu">
+                    <h1 class="logo"><a href="/"><img src="/images/common/logo.svg" alt="로고"></a></h1>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">발송</a>
+                            </li>
+                            <li>
+                                <a href="#">도착</a>
+                                <div class="depth">
+                                    <a href="#">도착자료조회</a>
+                                    <a href="#">도착예정 조회</a>
+                                    <a href="#">배달기사 등록</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">변상</a>
+                            </li>
+                            <li>
+                                <a href="#">과착</a>
+                            </li>
+                            <li>
+                                <a href="#">시스템</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--//[Logo][Menu]-->
+                <!--Util-->
+                <div class="util">
+                    <!--영업소-->
+                    <div class="drop-select">
+                        <div class="value">서울영등포당산3가555</div>
+                        <div class="option_wrap">
+                            <div class="option">
+                                <a href="#"><i class="icon"></i>서울구로197</a>
+                                <a href="#"><i class="icon"></i>금천가산 555</a>
+                                <a href="#"><i class="icon"></i>서울영등포당산3가555</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//영업소-->
+                    <!--Button-->
+                    <div class="buttons">
+                        <div class="alarm">
+                            <button type="button" data-title="알림" class="type_icon">알림<i>99</i></button>
+                            <div class="drop_list">
+                                <h5>알림</h5>
+                                <div class="tab">
+                                    <a href="#" class="on">공지사항</a>
+                                    <a href="#">일반</a>
+                                </div>
+                                <div class="data_wrap">
+                                    <div class="list">
+                                        <dl class="comment">
+                                            <dt>
+                                                <h6>코멘트 알림<i class="chip">일반</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#"><span>운송장번호</span>코멘트가 등록되었습니다.</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="noti">
+                                            <dt>
+                                                <h6>공지 알림<i class="chip">시스템</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#">공지사항 제목표시</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="comment read">
+                                            <dt>
+                                                <h6>코멘트 알림<i class="chip">일반</i></h6>
+                                            </dt>
+                                            <dd>
+                                                <a href="#"><span>운송장번호</span>코멘트가 등록되었습니다.</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="noti read">
+                                            <dt>
+                                                <h6>공지 알림<i class="chip">시스템</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#">공지사항 제목표시</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="message">최근 2주간의 알림이 표시됩니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="take">
+                            <button type="button" data-title="인수율조회" class="type_icon">인수율조회</button>
+                        </div>
+                        <div class="check">
+                            <button type="button" data-title="조회" class="type_icon">조회</button>
+                        </div>
+                        <div class="account">
+                            <button type="button" data-title="계정" class="type_icon">계정</button>
+                        </div>
+                        <div class="setting">
+                            <button type="button" data-title="환경설정" class="type_icon">환경설정</button>
+                        </div>
+                        <button type="button" data-title="새창으로 보기" class="blank type_icon">새창으로보기</button>
+                    </div>
+                    <!--//Button-->
+                </div>
+                <!--//Util-->
+            </div>
+        </header>
+
+
+
+        <div class="container">
+            <!--최근 본 메뉴OFF-->
+            <aside class="recentMenu">
+                <h6>최근 본 메뉴</h6>
+                <div class="list">
+                    <ul>
+                        <li><a href="#">영역소별 인수율</a><button type="button">삭제</button></li>
+                    </ul>
+                </div>
+            </aside>
+            <!--//최근 본 메뉴OFF-->
+            <!--공통Page-->
+            <section class="pageLayout">
+                <!--Title-->
+                <div class="pageTitle">
+                    <h2>발송예약조회</h2>
+                    <ul class="root">
+                        <li>홈</li>
+                        <li>발송</li>
+                        <li>발송예약조회</li>
+                    </ul>
+                </div>
+                <!--//Title-->
+                <!--단축키-->
+                <div class="shortcutKeys">
+                    <div class="setting">
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+1</i>수정</button>
+                        <button type="button" class="comm shortcut"><i class="set">F3</i>엑셀</button>
+                        <button type="button" class="comm shortcut"><i class="set">F4</i>삭제</button>
+                        <button type="button" class="comm shortcut"><i class="set">F7</i>라벨지</button>
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+2</i>고객관리번호</button>
+                        <button type="button" class="comm shortcut"><i class="set">Alt+4</i>발송자료출력</button>
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+6</i>픽업기사</button>
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+7</i>영수증</button>
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+9</i>전자영수증</button>
+                        <button type="button" class="comm shortcut"><i class="set">Ctrl+8</i>신용수정</button>
+                    </div>
+                    <div class="fix">
+                        <button type="button" class="comm shortcut esc"><i class="set">ESC</i>닫기</button>
+                    </div>
+                </div>
+                <!--//단축키-->
+                <div class="roundBoxWrap">
+                    <!--조회조건-->
+                    <div class="roundBox typeSearch">
+                        <form>
+                            <div class="top_ctrl">
+                                <h5 class="tit">조회조건</h5>
+                                <div class="btns">
+                                    <button type="button" class="comm bg_blue">조회</button>
+                                    <button type="button" class="comm folding">접기/펴기</button>
+                                </div>
+                            </div>
+                            <div class="inputField">
+                                <div class="rows">
+                                    <dl class="element wd35">
+                                        <dt>기간</dt>
+                                        <dd>
+                                            <div class="dateEnter">
+                                                <div class="term">
+                                                    <input type="text" class="input date" placeholder="YYYY-MM-DD">
+                                                    ~
+                                                    <input type="text" class="input date" placeholder="YYYY-MM-DD">
+                                                </div>
+                                                <div class="btns">
+                                                    <button type="button" class="comm on">오늘</button>
+                                                    <button type="button" class="comm">1개월</button>
+                                                    <button type="button" class="comm">3개월</button>
+                                                    <button type="button" class="comm">4개월</button>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                    <dl class="element wd25">
+                                        <dt>검색어</dt>
+                                        <dd>
+                                            <div class="keyword">
+                                                <select class="select">
+                                                    <option>전체</option>
+                                                </select>
+                                                <input type="text" class="input" placeholder="검색어">
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--//조회조건-->
+                    <!--조회결과-->
+                    <div class="roundBox typeResult">
+                        <div class="top_ctrl">
+                            <h5 class="tit">검색결과<span>총 <i>00</i>건</span></h5>
+                            <div class="btns">
+                                <button type="button" data-title="엑셀다운로드" class="comm only-icon excel">엑셀다운로드</button>
+                                <button type="button" data-title="리스트필터" class="comm only-icon filter">리스트필터</button>
+                            </div>
+                        </div>
+                        <!--합산-->
+                        <div class="total_sum">
+                            <ul>
+                                <li>CBM<span><i>0</i>cbm</span></li>
+                                <li>무게<span><i>0</i>Kg</span></li>
+                                <li>현택<span><i class="red">9,876,000</i>원</span></li>
+                                <li>착택<span><i>0</i>원</span></li>
+                                <li>현불<span><i>0</i>원</span></li>
+                                <li>착불<span><i>0</i>원</span></li>
+                                <li>도선료<span><i class="red">0</i>원</span></li>
+                                <li>할증운임<span><i>0</i>원</span></li>
+                                <li>운송수수료<span><i>0</i>원</span></li>
+                                <li>기타운임<span><i>0</i>원</span></li>
+                                <li>별도운임<span><i>0</i>원</span></li>
+                                <li>총운임<span><i>0</i>원</span></li>
+                                <li>현금<span><i class="red">0</i>원</span></li>
+                                <li>카드<span><i>0</i>원</span></li>
+                                <li>신용<span><i>0</i>원</span></li>
+                            </ul>
+                        </div>
+                        <!--//합산-->
+                        <!--Grid-->
+                        <div class="gridBox">
+                            테이블
+                        </div>
+                        <!--//Grid-->
+                        <button type="button" class="comm all-view">모두보기</button>
+                    </div>
+                    <!--//조회결과-->
+                </div>
+            </section>
+            <!--//공통Page-->
+        </div>
+    </div>
+</body>
+</html>
