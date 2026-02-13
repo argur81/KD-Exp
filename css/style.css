@@ -314,7 +314,7 @@ header::before {
   display: block;
   width: 100%;
   height: 4px;
-  background: #242390 url("/images/common/header_top_bg.gif") no-repeat right top;
+  background: #242390 url("../images/common/header_top_bg.gif") no-repeat right top;
   z-index: 1;
 }
 header .h-cntn {
@@ -510,7 +510,7 @@ header .util .drop-select .value::after {
   content: "";
   width: 10px;
   height: 5px;
-  background: url("/images/common/header_drop_select_arrow.png") no-repeat center center;
+  background: url("../images/common/header_drop_select_arrow.png") no-repeat center center;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -595,8 +595,8 @@ header .util .drop-select .option_wrap .option > a i::before {
   -webkit-mask-size: 18px 18px;
           mask-size: 18px 18px;
   background-color: #797979;
-  -webkit-mask-image: url("/images/common/header_icon_company.svg");
-          mask-image: url("/images/common/header_icon_company.svg");
+  -webkit-mask-image: url("../images/common/header_icon_company.svg");
+          mask-image: url("../images/common/header_icon_company.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-position: center;
@@ -659,7 +659,7 @@ header .util .buttons button.type_icon:hover::after {
 }
 header .util .buttons button.type_icon[data-title=알림] {
   background-color: #ffeedb;
-  background-image: url("/images/common/header_icon_alarm.svg");
+  background-image: url("../images/common/header_icon_alarm.svg");
 }
 header .util .buttons button.type_icon[data-title=알림] i {
   background-color: #ff2525;
@@ -675,23 +675,23 @@ header .util .buttons button.type_icon[data-title=알림] i {
 }
 header .util .buttons button.type_icon[data-title=인수율조회] {
   background-color: #e2fddc;
-  background-image: url("/images/common/header_icon_take.svg");
+  background-image: url("../images/common/header_icon_take.svg");
 }
 header .util .buttons button.type_icon[data-title=조회] {
   background-color: #d7ecff;
-  background-image: url("/images/common/header_icon_check.svg");
+  background-image: url("../images/common/header_icon_check.svg");
 }
 header .util .buttons button.type_icon[data-title=계정] {
   background-color: #f0ebfe;
-  background-image: url("/images/common/header_icon_account.svg");
+  background-image: url("../images/common/header_icon_account.svg");
 }
 header .util .buttons button.type_icon[data-title=환경설정] {
   background-color: #ededed;
-  background-image: url("/images/common/header_icon_setting.svg");
+  background-image: url("../images/common/header_icon_setting.svg");
 }
 header .util .buttons button.type_icon[data-title="새창으로 보기"] {
   background-color: #ffedfb;
-  background-image: url("/images/common/header_icon_blank.svg");
+  background-image: url("../images/common/header_icon_blank.svg");
 }
 header .util .buttons button.type_icon[data-title="새창으로 보기"]::after {
   left: inherit;
@@ -1000,12 +1000,12 @@ header .util .buttons .alarm .drop_list .data_wrap .message {
   content: "";
   width: 8px;
   height: 2px;
-  background: url("/images/icon/icon_menu_minus.svg") no-repeat;
+  background: url("../images/icon/icon_menu_minus.svg") no-repeat;
 }
 .container .recentMenu > h6.close::after {
   width: 8px;
   height: 8px;
-  background: url("/images/icon/icon_menu_plus.svg") no-repeat;
+  background: url("../images/icon/icon_menu_plus.svg") no-repeat;
 }
 .container .recentMenu ul {
   padding: 12px 15px;
@@ -1058,7 +1058,7 @@ header .util .buttons .alarm .drop_list .data_wrap .message {
   width: 12px;
   height: 12px;
   border: none;
-  background: url("/images/icon/icon_menu_del.svg") no-repeat center center;
+  background: url("../images/icon/icon_menu_del.svg") no-repeat center center;
   text-indent: -9999px;
 }
 .container .pageLayout {
@@ -1223,7 +1223,7 @@ header .util .buttons .alarm .drop_list .data_wrap .message {
 .container .pageLayout .pageTitle .root li {
   color: #767676;
   padding-right: 14px;
-  background: url("/images/icon/icon_root_arrow.svg") no-repeat right center;
+  background: url("../images/icon/icon_root_arrow.svg") no-repeat right center;
 }
 .container .pageLayout .pageTitle .root li:last-child {
   background: none;
@@ -1829,8 +1829,8 @@ button.comm.folding::before {
   -webkit-mask-size: 12px 6px;
           mask-size: 12px 6px;
   background-color: #505050;
-  -webkit-mask-image: url("/images/icon/icon_folding_arrow.svg");
-          mask-image: url("/images/icon/icon_folding_arrow.svg");
+  -webkit-mask-image: url("../images/icon/icon_folding_arrow.svg");
+          mask-image: url("../images/icon/icon_folding_arrow.svg");
 }
 button.comm.folding:hover::before {
   background-color: #505050;
@@ -1875,10 +1875,10 @@ button.comm.only-icon:hover::after {
   display: block;
 }
 button.comm.only-icon.excel {
-  background: url("/images/icon/icon_excel.svg") no-repeat center center;
+  background: url("../images/icon/icon_excel.svg") no-repeat center center;
 }
 button.comm.only-icon.filter {
-  background: url("/images/icon/icon_filter.svg") no-repeat center center;
+  background: url("../images/icon/icon_filter.svg") no-repeat center center;
 }
 button.comm.all-view {
   width: 100%;
@@ -1889,7 +1889,7 @@ button.comm.all-view::after {
   content: "";
   width: 8px;
   height: 8px;
-  background: url("/images/icon/icon_menu_plus.svg") no-repeat;
+  background: url("../images/icon/icon_menu_plus.svg") no-repeat;
 }
 button.comm.brdr_gray:hover {
   border-color: #242390;
@@ -1929,7 +1929,7 @@ input.input::placeholder {
 }
 input.input.date {
   padding: 0 40px 0 12px;
-  background: url("/images/icon/icon_calendar.svg") no-repeat calc(100% - 14px) center;
+  background: url("../images/icon/icon_calendar.svg") no-repeat calc(100% - 14px) center;
 }
 input.input.has_unit {
   padding: 0 50px 0 12px;
@@ -1946,7 +1946,7 @@ select.select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #fff url("/images/icon/icon_select_arrow.svg") no-repeat calc(100% - 12px) center;
+  background: #fff url("../images/icon/icon_select_arrow.svg") no-repeat calc(100% - 12px) center;
 }
 select.select:focus {
   border-color: #242390;
@@ -2030,7 +2030,7 @@ select.select:focus {
 }
 .checkbox input[type=checkbox]:checked + span::before {
   border-color: #00b3e3;
-  background: #00b3e3 url("/images/icon/icon_checkbox.svg") no-repeat center center;
+  background: #00b3e3 url("../images/icon/icon_checkbox.svg") no-repeat center center;
 }
 .checkbox span {
   display: -webkit-box;
