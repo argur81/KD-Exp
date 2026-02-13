@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>경동물류 차량관리시스템</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="/scripts/module/jquery-1.10.2.min.js"></script>
+    <script src="/scripts/front.js"></script>
+</head>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="h-cntn">
+                <!--[Logo][Menu]-->
+                <div class="menu">
+                    <h1 class="logo"><a href="/"><img src="/images/common/logo.svg" alt="로고"></a></h1>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="#">발송</a>
+                            </li>
+                            <li>
+                                <a href="#">도착</a>
+                                <div class="depth">
+                                    <a href="#">도착자료조회</a>
+                                    <a href="#">도착예정 조회</a>
+                                    <a href="#">배달기사 등록</a>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#">변상</a>
+                            </li>
+                            <li>
+                                <a href="#">과착</a>
+                            </li>
+                            <li>
+                                <a href="#">시스템</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!--//[Logo][Menu]-->
+                <!--Util-->
+                <div class="util">
+                    <!--영업소-->
+                    <div class="drop-select">
+                        <div class="value">서울영등포당산3가555</div>
+                        <div class="option_wrap">
+                            <div class="option">
+                                <a href="#"><i class="icon"></i>서울구로197</a>
+                                <a href="#"><i class="icon"></i>금천가산 555</a>
+                                <a href="#"><i class="icon"></i>서울영등포당산3가555</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//영업소-->
+                    <!--Button-->
+                    <div class="buttons">
+                        <div class="alarm">
+                            <button type="button" data-title="알림" class="type_icon">알림<i>99</i></button>
+                            <div class="drop_list">
+                                <h5>알림</h5>
+                                <div class="tab">
+                                    <a href="#" class="on">공지사항</a>
+                                    <a href="#">일반</a>
+                                </div>
+                                <div class="data_wrap">
+                                    <div class="list">
+                                        <dl class="comment">
+                                            <dt>
+                                                <h6>코멘트 알림<i class="chip">일반</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#"><span>운송장번호</span>코멘트가 등록되었습니다.</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="noti">
+                                            <dt>
+                                                <h6>공지 알림<i class="chip">시스템</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#">공지사항 제목표시</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="comment read">
+                                            <dt>
+                                                <h6>코멘트 알림<i class="chip">일반</i></h6>
+                                            </dt>
+                                            <dd>
+                                                <a href="#"><span>운송장번호</span>코멘트가 등록되었습니다.</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                        <dl class="noti read">
+                                            <dt>
+                                                <h6>공지 알림<i class="chip">시스템</i></h6>
+                                                <span class="badge">안읽음</span>
+                                            </dt>
+                                            <dd>
+                                                <a href="#">공지사항 제목표시</a>
+                                                <i>24-05-20 16:05</i>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="message">최근 2주간의 알림이 표시됩니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="take">
+                            <button type="button" data-title="인수율조회" class="type_icon">인수율조회</button>
+                        </div>
+                        <div class="check">
+                            <button type="button" data-title="조회" class="type_icon">조회</button>
+                        </div>
+                        <div class="account">
+                            <button type="button" data-title="계정" class="type_icon">계정</button>
+                        </div>
+                        <div class="setting">
+                            <button type="button" data-title="환경설정" class="type_icon">환경설정</button>
+                        </div>
+                        <button type="button" data-title="새창으로 보기" class="blank type_icon">새창으로보기</button>
+                    </div>
+                    <!--//Button-->
+                </div>
+                <!--//Util-->
+            </div>
+        </header>
+
+
+
+        <div class="container">
+            <!--최근 본 메뉴OFF-->
+            <aside class="recentMenu">
+                <h6>최근 본 메뉴</h6>
+                <div class="list">
+                    <ul>
+                        <li><a href="#">영역소별 인수율</a><button type="button">삭제</button></li>
+                    </ul>
+                </div>
+            </aside>
+            <!--//최근 본 메뉴OFF-->
+            <!--공통Page-->
+            <section class="pageLayout">
+                <!--Title-->
+                <div class="pageTitle">
+                    <h2>개별접수</h2>
+                    <ul class="root">
+                        <li>홈</li>
+                        <li>발송</li>
+                        <li>개별접수</li>
+                    </ul>
+                </div>
+                <!--//Title-->
+                <!--단축키-->
+                <div class="shortcutKeys">
+                    <div class="setting">
+                        <button type="button" class="comm shortcut"><i class="set">F4</i>라벨지</button>
+                        <button type="button" class="comm shortcut"><i class="set">F5</i>영수증</button>
+                        <button type="button" class="comm shortcut"><i class="set">F8</i>예약발송스캔</button>
+                    </div>
+                    <div class="fix">
+                        <button type="button" class="comm shortcut esc"><i class="set">ESC</i>닫기</button>
+                        <button type="button" class="comm shortcut brdr_blue"><i class="set">F1</i>초기화</button>
+                        <button type="button" class="comm shortcut bg_blue"><i class="set">F5</i>예약접수</button>
+                    </div>
+                </div>
+                <!--//단축키-->
+                <div class="roundBoxWrap">
+                    <!--접수정보-->
+                    <div class="roundBox typeGirdInput">
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>접수정보</h5>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="360">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>접수일</th>
+                                            <td><input type="text" class="input" readonly="readonly" value="2024-04-04"></td>
+                                            <th>운송장번호</th>
+                                            <td><input type="text" class="input" readonly="readonly" value="발급 전"></td>
+                                            <th>고객사 주문번호</th>
+                                            <td><input type="text" class="input" placeholder="고객사 주문번호"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>발송영업소</th>
+                                            <td><input type="text" class="input" readonly="readonly" value="[경동] 서울영등포3가555 영업소"></td>
+                                            <th>발송영업소 전화번호</th>
+                                            <td colspan="3"><input type="text" class="input" readonly="readonly" value="043-1234-4567"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>도착영업소</th>
+                                            <td><input type="text" class="input" placeholder="도착영업소"></td>
+                                            <th>도착영업소 전화번호</th>
+                                            <td><input type="text" class="input" readonly="readonly" value="043-1234-4567"></td>
+                                            <th>배송도착지와의 거리</th>
+                                            <td><span class="text">약 20km</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//접수정보-->
+                    <div class="roundBox typeGirdInput">
+                        <!--배송정보-->
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>배송정보</h5>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="360">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="point">운임구분</th>
+                                            <td>
+                                                <div class="radio_group">
+                                                    <label class="radio">
+                                                        <input type="radio" name="division">
+                                                        <span>현불택배</span>
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="division">
+                                                        <span>착불택배</span>
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="division">
+                                                        <span>현불화물</span>
+                                                    </label>
+                                                    <label class="radio">
+                                                        <input type="radio" name="division">
+                                                        <span>착불화물</span>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <th class="point">배송구분</th>
+                                            <td>
+                                                <select class="select">
+                                                    <option>전체</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//배송정보-->
+                        <!--보내는 분-->
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>보내는 분</h5>
+                                    <div class="checkbox_group">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>화면보존</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>카카오전송</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>주소생략</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="point">보내는분</th>
+                                            <td>
+                                                <div class="input-n-button">
+                                                    <input type="text" class="input" placeholder="보내는 분">
+                                                    <button type="button" class="comm brdr_blue">검색</button>
+                                                </div>
+                                            </td>
+                                            <th>고객관리번호</th>
+                                            <td>
+                                                <div class="input-n-button">
+                                                    <input type="text" class="input" placeholder="보내는 분">
+                                                    <button type="button" class="comm brdr_blue">검색</button>
+                                                </div>
+                                            </td>
+                                            <th class="point">전화번호</th>
+                                            <td>
+                                                <input type="text" class="input" placeholder="‘-’를 제외하고 입력해주세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>기타전화</th>
+                                            <td>
+                                                <input type="text" class="input" placeholder="‘-’를 제외하고 입력해주세요">
+                                            </td>
+                                            <th class="point">주소</th>
+                                            <td colspan="3">
+                                                <div class="address">
+                                                    <div class="input-n-button post_num">
+                                                        <input type="text" class="input" placeholder="우편번호">
+                                                        <button type="button" class="comm brdr_blue">검색</button>
+                                                    </div>
+                                                    <input type="text" class="input get_num" placeholder="주소" readonly="readonly">
+                                                    <input type="text" class="input detail" placeholder="상세주소를 입력해주세요">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//보내는 분-->
+                        <!--받는 분-->
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>받는 분</h5>
+                                    <div class="checkbox_group">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>화면보존</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>카카오전송</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="point">받는 분</th>
+                                            <td>
+                                                <div class="input-n-button">
+                                                    <input type="text" class="input" placeholder="보내는 분">
+                                                    <button type="button" class="comm brdr_blue">검색</button>
+                                                </div>
+                                            </td>
+                                            <th class="point">전화번호</th>
+                                            <td>
+                                                <input type="text" class="input" placeholder="‘-’를 제외하고 입력해주세요">
+                                            </td>
+                                            <th>기타전화</th>
+                                            <td>
+                                                <input type="text" class="input" placeholder="‘-’를 제외하고 입력해주세요">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="point">주소</th>
+                                            <td colspan="5">
+                                                <div class="address">
+                                                    <div class="input-n-button post_num">
+                                                        <input type="text" class="input" placeholder="우편번호">
+                                                        <button type="button" class="comm brdr_blue">검색</button>
+                                                    </div>
+                                                    <input type="text" class="input get_num" placeholder="주소" readonly="readonly">
+                                                    <input type="text" class="input detail" placeholder="상세주소를 입력해주세요">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//받는 분-->
+                        <!--기본정보-->
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>기본정보</h5>
+                                    <div class="checkbox_group">
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>화면보존</span>
+                                        </label>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                            <span>표준운임자동계산</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="btns">
+                                    <button type="button" class="comm brdr_gray">운임계산기</button>
+                                    <button type="button" class="comm brdr_blue">품목추가</button>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                        <col width="180">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th class="point">품목명</th>
+                                            <td colspan="3">
+                                                <input type="text" class="input" placeholder="품목명">
+                                            </td>
+                                            <th class="point">포장상태</th>
+                                            <td>
+                                                <div class="select-n-button">
+                                                    <select class="select">
+                                                        <option>박스</option>
+                                                    </select>
+                                                    <button type="button" class="comm brdr_blue">추가</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="point">표준운임</th>
+                                            <td colspan="5">
+                                                <div class="disply-flex-gap10">
+                                                    <dl class="element horiz">
+                                                        <dt>가로</dt>
+                                                        <dd>
+                                                            <div class="unit_field" data-title="CM">
+                                                                <input type="text" class="input has_unit" placeholder="가로 입력">
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="element horiz">
+                                                        <dt>세로</dt>
+                                                        <dd>
+                                                            <div class="unit_field" data-title="CM">
+                                                                <input type="text" class="input has_unit" placeholder="세로 입력">
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="element horiz">
+                                                        <dt>높이</dt>
+                                                        <dd>
+                                                            <div class="unit_field" data-title="CM">
+                                                                <input type="text" class="input has_unit" placeholder="높이 입력">
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="element horiz">
+                                                        <dt>무게</dt>
+                                                        <dd>
+                                                            <div class="unit_field" data-title="kg">
+                                                                <input type="text" class="input has_unit" placeholder="무게 입력">
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                    <dl class="element horiz">
+                                                        <dt>단가</dt>
+                                                        <dd>
+                                                            <div class="unit_field" data-title="만원">
+                                                                <input type="text" class="input has_unit" placeholder="단가 입력">
+                                                            </div>
+                                                        </dd>
+                                                    </dl>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>수량</th>
+                                            <td colspan="3">
+                                                <div class="disply-flex-gap10">
+                                                    <div class="quantity">
+                                                        <button type="button">-</button>
+                                                        <input type="text" readonly="readonly">
+                                                        <button type="button">+</button>
+                                                    </div>
+                                                    <span class="text"><i class="red">*</i>복수 수량을 입력한 경우, 운송장 번호가 복수 수량만큼 생성됩니다.</span>
+                                                </div>
+                                            </td>
+                                            <th>픽업기사</th>
+                                            <td>
+                                                <select class="select">
+                                                    <option>픽업기사명</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="point">배송운임</th>
+                                            <td>
+                                                <div class="unit_field" data-title="원">
+                                                    <input type="text" class="input has_unit" placeholder="배송운임비를 입력해주세요">
+                                                </div>
+                                            </td>
+                                            <th>기타운임</th>
+                                            <td>
+                                                <div class="unit_field" data-title="원">
+                                                    <input type="text" class="input has_unit" placeholder="기타운임비를 입력해주세요">
+                                                </div>
+                                            </td>
+                                            <th>별도운임</th>
+                                            <td>
+                                                <div class="unit_field" data-title="원">
+                                                    <input type="text" class="input has_unit" placeholder="별도운임비를 입력해주세요">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>할증운임</th>
+                                            <td>
+                                                <span class="text">0원</span>
+                                            </td>
+                                            <th>도서운임</th>
+                                            <td>
+                                                <span class="text">0원</span>
+                                            </td>
+                                            <th>운임합계</th>
+                                            <td>
+                                                <span class="text">0원</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//기본정보-->
+                        <!--기타정보-->
+                        <div class="rows">
+                            <div class="top_ctrl">
+                                <div class="tit_area">
+                                    <h5>기타정보</h5>
+                                </div>
+                                <div class="btns">
+                                    <button type="button" class="comm brdr_blue">파일첨부</button>
+                                </div>
+                            </div>
+                            <div class="grid">
+                                <table>
+                                    <colgroup>
+                                        <col width="180">
+                                        <col width="auto">
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>택배사진 업로드</th>
+                                            <td>파일영역</td>
+                                        </tr>
+                                        <tr>
+                                            <th>메모</th>
+                                            <td>
+                                                <textarea class="textarea"></textarea>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--//기타정보-->
+                    </div>
+                </div>
+            </section>
+            <!--//공통Page-->
+        </div>
+    </div>
+</body>
+</html>
