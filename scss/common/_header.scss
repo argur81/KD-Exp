@@ -1,0 +1,386 @@
+header {
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    background-color: #fafafa;
+    @include flexLayout(column, flex-start, stretch);
+    z-index: 10;
+    left: 0;
+    top: 0;
+    &.focus {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background-color: #e0e0e0;
+        position: absolute;
+        left: 0;
+        top: 64px;
+        z-index: 1;
+    }
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: $pramary-theme-color url('/images/common/header_top_bg.gif') no-repeat right top;
+        z-index: 1;
+    }
+    .h-cntn {
+        width: 100%;
+        height: 60px;
+        @include flexLayout(row, space-between, center);
+        padding: 0 24px;
+    }
+    .menu {
+        width: 760px;
+        height: 60px;
+        position: relative;
+        @include flexLayout(row, flex-start, center);
+        .logo {
+            a {
+                display: block;
+                img {
+                    width: 166px;
+                }
+            }
+        }
+        nav {
+            @include positionLayout(absolute, y);
+            right: 0;
+            z-index: 2;
+            ul {
+                @include flexLayout(row, flex-start, center);
+                gap: 60px;
+                li {
+                    position: relative;
+                    > a {
+                        display: block;
+                        height: 60px;
+                        font-size: 18px;
+                        position: relative;
+                        font-weight: 500;
+                        transition: all 0.4s;
+                        @include flexLayout(row, center, center);
+                        &::after {
+                            content: '';
+                            width: 0;
+                            height: 2px;
+                            @include positionLayout(absolute, x);
+                            bottom: -1px;
+                            transition:all 0.4s;
+                        }
+                        &:hover,
+                        &.on {
+                            color: $pramary-theme-color;
+                            &::after {
+                                @include virtualLine(calc(100% + 4px), 2px, $pramary-theme-color);
+                            }
+                        }
+                    }
+                    .depth {
+                        min-height: 190px;
+                        @include flexLayout(column, flex-start, center);
+                        @include positionLayout(absolute, x);
+                        display: none;
+                        top: 60px;
+                        padding: 30px 0;
+                        gap: 15px;
+                        a {
+                            display: block;
+                            white-space: nowrap;
+                            color: #505050;
+                            padding: 5px 0;
+                            &:hover {
+                                color: $pramary-theme-color;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .util {
+        @include flexLayout(row, flex-start, center);
+        gap: 10px;
+        .drop-select {
+            position: relative;
+            .value {
+                min-width: 235px;
+                height: 34px;
+                border-radius: 4px;
+                border: 1px solid #e0e0e0;
+                @include flexLayout(row, space-between, center);
+                padding: 0 40px 0 12px;
+                position: relative;
+                cursor: pointer;
+                background-color: #fff;
+                &::after {
+                    content: '';
+                    width: 10px;
+                    height: 5px;
+                    background: url('/images/common/header_drop_select_arrow.png') no-repeat center center;
+                    @include positionLayout(absolute, y);
+                    right: 10px;
+                    transition: all .4s;
+                }
+                &.focus {
+                    &::after {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            .option_wrap {
+                width: 100%;
+                position: absolute;
+                z-index: 12;
+                left: 0;
+                top: 34px;
+                background-color: #fff;
+                box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+                border-radius: 4px;
+                display: none;
+                .option {
+                    padding: 10px;
+                    @include flexLayout(column, flex-start, stretch);
+                    gap: 10px;
+
+                    > a {
+                        @include flexLayout(row, flex-start, center);
+                        gap: 10px;
+                        color: #797979;
+                        i {
+                            width: 36px;
+                            height: 36px;
+                            background-color: #ededed;
+                            border-radius: 100%;
+                            @include flexLayout(row, center, center);
+                            &::before {
+                                content: '';
+                                width: 18px;
+                                height: 18px;
+                                mask-size: 18px 18px;
+                                background-color: #797979;
+                                mask-image: url('/images/common/header_icon_company.svg');
+                                mask-repeat: no-repeat;
+                                mask-position: center;
+                            }
+                        }
+                        &:hover {
+                            color: $pramary-font-color;
+                            i {
+                                background-color: #eaeaff;
+                                &::before {
+                                    background-color: $pramary-theme-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .buttons {
+            @include flexLayout(row, flex-start, center);
+            gap: 10px;
+            button {
+                &.type_icon {
+                    width: 36px;
+                    height: 36px;
+                    border-radius: 100%;
+                    position: relative;
+                    text-indent: -9999px;
+                    border: none;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    &::after {
+                        content: attr(data-title);
+                        @include positionLayout(absolute, x);
+                        top: 40px;
+                        background-color: rgba(0,0,0,0.8);
+                        color: #fff;
+                        padding: 0 10px;
+                        border-radius: 4px;
+                        z-index: 13;
+                        line-height: 34px;
+                        text-indent: 0;
+                        white-space: nowrap;
+                        display: none;
+                    }
+                    &:hover {
+                        &::after {
+                            display: block;
+                        }
+                    }
+                    &[data-title="알림"] {
+                        background-color: #ffeedb;
+                        background-image: url('/images/common/header_icon_alarm.svg');
+                        i {
+                            background-color: #ff2525;
+                            color: #fff;
+                            font-size: 12px;
+                            position: absolute;
+                            top: -2px;
+                            left: 50%;
+                            text-indent: 0;
+                            line-height: 16px;
+                            border-radius: 16px;
+                            padding: 0 5px;
+                        }
+                    }
+                    &[data-title="인수율조회"] {
+                        background-color: #e2fddc;
+                        background-image: url('/images/common/header_icon_take.svg');
+                    }
+                    &[data-title="조회"] {
+                        background-color: #d7ecff;
+                        background-image: url('/images/common/header_icon_check.svg');
+                    }
+                    &[data-title="계정"] {
+                        background-color: #f0ebfe;
+                        background-image: url('/images/common/header_icon_account.svg');
+                    }
+                    &[data-title="환경설정"] {
+                        background-color: #ededed;
+                        background-image: url('/images/common/header_icon_setting.svg');
+                    }
+                    &[data-title="새창으로 보기"] {
+                        background-color: #ffedfb;
+                        background-image: url('/images/common/header_icon_blank.svg');
+                        &::after {
+                            left: inherit;
+                            right: 0;
+                            transform: none;
+                        }
+                    }
+                }
+            }
+            .alarm {
+                position: relative;
+                .drop_list {
+                    width: 297px;
+                    height: 515px;
+                    @include positionLayout(absolute, x);
+                    z-index: 11;
+                    top: 50px;
+                    background-color: #fff;
+                    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+                    border-radius: 4px;
+                    display: none;
+                    h5 {
+                        padding: 0 20px;
+                        line-height: 45px;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    .tab {
+                        background-color: #f9f9f9;
+                        height: 37px;
+                        @include flexLayout(row, flex-start, center);
+                        gap: 30px;
+                        padding: 0 20px;
+                        a {
+                            color: #505050;
+                            line-height: 37px;
+                            position: relative;
+                            &.on {
+                                color: $pramary-theme-color;
+                                font-weight: 500;
+                                &::before {
+                                    @include virtualLine(30px, 2px, $pramary-theme-color);
+                                    @include positionLayout(absolute, x);
+                                    bottom: -1px;
+                                }
+                            }
+                        }
+                    }
+                    .data_wrap {
+                        border-top: 1px solid #e0e0e0;
+                        position: relative;
+                        height: calc(100% - 82px);
+                        .list {
+                            width: 100%;
+                            height: calc(100% - 93px);
+                            overflow: hidden;
+                            overflow-y: auto;
+                            @include scrollbar();
+                            dl {
+                                padding: 15px 20px;
+                                @include flexLayout(column, flex-start, stretch);
+                                gap: 5px;
+                                dt {
+                                    @include flexLayout(row, space-between, center);
+                                    h6 {
+                                        @include flexLayout(row, flex-start, center);
+                                        gap: 10px;
+                                        font-size: 12px;
+                                        color: #505050;
+                                        font-weight: 400;
+                                        .chip {
+                                            color: #101010;
+                                            border: 1px solid #e0e0e0;
+                                            padding: 0 5px;
+                                            line-height: 18px;
+                                            border-radius: 18px;
+                                        }
+                                    }
+                                    .badge {
+                                        font-size: 12px;
+                                        color: #505050;
+                                        position: relative;
+                                        padding-right: 10px;
+                                        &::after {
+                                            content: '';
+                                            width: 6px;
+                                            height: 6px;
+                                            border-radius: 100%;
+                                            background-color: #ff2525;
+                                            position: absolute;
+                                            right: 0;
+                                            top: -5px;
+                                        }
+                                    }
+                                }
+                                dd {
+                                    @include flexLayout(column, flex-start, stretch);
+                                    gap: 10px;
+                                    a {
+                                        @include flexLayout(row, flex-start, center);
+                                        gap: 10px;
+                                        @include ellipsis(1);
+                                    }
+                                    i {
+                                        font-size: 12px;
+                                        color: #505050;
+                                    }
+                                }
+                                &.noti {
+                                    background-color: #fff9e6;
+                                }
+                                &.read {
+                                    opacity: 0.5;
+                                    dt {
+                                        .badge {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .message {
+                            width: 100%;
+                            height: 93px;
+                            @include flexLayout(row, center, center);
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                            color: #c9c9c9;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

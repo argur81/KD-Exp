@@ -1,0 +1,29 @@
+.radio_group {
+    @include flexLayout(row, flex-start, center);
+    gap: 30px;
+}
+.radio {
+    position: relative;
+    cursor: pointer;
+    input[type='radio'] {
+        appearance: none;
+        margin: 0;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+        cursor: pointer;
+        @include positionLayout(absolute, y);
+        left: 0;
+        &:checked {
+            width: 15px;
+            height: 15px;
+            background-color: #00b3e3;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 2px #00b3e3;
+        }
+    }
+    span {
+        padding-left: 22px;
+    }
+}

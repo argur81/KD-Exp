@@ -1,0 +1,15 @@
+﻿@mixin font-face($name, $file, $weight: noraml, $style: normal) {
+    @font-face {
+        font-family: "#{$name}";
+        src: url('fonts/SpoqaHanSans/#{$file}.woff') format('woff'),
+        url('fonts/SpoqaHanSans/#{$file}.woff2') format('woff2'),
+        url('fonts/SpoqaHanSans/#{$file}.ttf') format('truetype');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+@include font-face('Spoqa Han Sans', 'SpoqaHanSansThin', 100);
+@include font-face('Spoqa Han Sans', 'SpoqaHanSansLight', 300);
+@include font-face('Spoqa Han Sans', 'SpoqaHanSansRegular', 400);
+@include font-face('Spoqa Han Sans', 'SpoqaHanSansMedium', 500);
+@include font-face('Spoqa Han Sans', 'SpoqaHanSansBold', 700);
